@@ -1,0 +1,87 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"type\":2,\"version\":\"5.59\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"186L\"}}}}}]}}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"b0024848b842a4779f7e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"job_postings_flat\"}},\"Property\":\"job_title_short\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "fb6cb873d31054e5fc57",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"05ea06a38bff46b3b9f6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":874.2268041237114,\"y\":29.690721649484537,\"z\":2000,\"width\":280.41237113402065,\"height\":280.41237113402065,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Avg(job_postings_flat.salary_hour_avg)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"job_postings_flat\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"salary_hour_avg\"}},\"Function\":1},\"Name\":\"Avg(job_postings_flat.salary_hour_avg)\",\"NativeReferenceName\":\"Average Hourly Salary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"salary_hour_avg\"}},\"Function\":1}}}]},\"columnProperties\":{\"Avg(job_postings_flat.salary_hour_avg)\":{\"displayName\":\"Average Hourly Salary\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.41,
+          "width": 280.41,
+          "x": 874.23,
+          "y": 29.69,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"71eeca33601145f0cbb4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":51.134020618556704,\"y\":29.690721649484537,\"z\":0,\"width\":280.41237113402065,\"height\":280.41237113402065,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(job_postings_flat.job_title_short)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"job_postings_flat\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"}},\"Function\":5},\"Name\":\"Min(job_postings_flat.job_title_short)\",\"NativeReferenceName\":\"Job Count\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"}},\"Function\":5}}}]},\"columnProperties\":{\"Min(job_postings_flat.job_title_short)\":{\"displayName\":\"Job Count\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.41,
+          "width": 280.41,
+          "x": 51.13,
+          "y": 29.69,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"77b59653121d959271fb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":657.4461979913916,\"y\":310.3586800573888,\"z\":4000,\"width\":622.5538020086083,\"height\":409.52654232424675,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"job_postings_flat.job_country\",\"active\":true}],\"Size\":[{\"queryRef\":\"CountNonNull(job_postings_flat.job_title_short)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"job_postings_flat\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_country\"},\"Name\":\"job_postings_flat.job_country\",\"NativeReferenceName\":\"job_country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"}},\"Function\":5},\"Name\":\"CountNonNull(job_postings_flat.job_title_short)\",\"NativeReferenceName\":\"Count of job_title_short\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 409.53,
+          "width": 622.55,
+          "x": 657.45,
+          "y": 310.36,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"c020a2951f53561a6151\",\"layouts\":[{\"id\":0,\"position\":{\"x\":24.742268041237114,\"y\":19.79381443298969,\"z\":4001,\"width\":1255.257731958763,\"height\":77.5257731958763,\"tabOrder\":4001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"JOB REPORT DASHBOARD\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"44pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 77.53,
+          "width": 1255.26,
+          "x": 24.74,
+          "y": 19.79,
+          "z": 4001.00
+        },
+        {
+          "config": "{\"name\":\"d758ed3ca456752704f7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":310.3586800573888,\"z\":3000,\"width\":640.9182209469153,\"height\":409.52654232424675,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"job_postings_flat.job_title_short\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(job_postings_flat.job_title_short)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"job_postings_flat\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"},\"Name\":\"job_postings_flat.job_title_short\",\"NativeReferenceName\":\"Job Title\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"}},\"Function\":5},\"Name\":\"CountNonNull(job_postings_flat.job_title_short)\",\"NativeReferenceName\":\"Job Count\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"job_title_short\"}},\"Function\":5}}}]},\"columnProperties\":{\"CountNonNull(job_postings_flat.job_title_short)\":{\"displayName\":\"Job Count\"},\"job_postings_flat.job_title_short\":{\"displayName\":\"Job Title\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'what are data jobs?'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"16D\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 409.53,
+          "width": 640.92,
+          "x": 0.00,
+          "y": 310.36,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"d8277eaba51eb9f62bd1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":483.298969072165,\"y\":29.690721649484537,\"z\":1000,\"width\":280.41237113402065,\"height\":280.41237113402065,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(job_postings_flat.salary_year_avg)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"job_postings_flat\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"salary_year_avg\"}},\"Function\":1},\"Name\":\"Sum(job_postings_flat.salary_year_avg)\",\"NativeReferenceName\":\"Average Yearly Salary\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"salary_year_avg\"}},\"Function\":1}}}]},\"columnProperties\":{\"Sum(job_postings_flat.salary_year_avg)\":{\"displayName\":\"Average Yearly Salary\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.41,
+          "width": 280.41,
+          "x": 483.30,
+          "y": 29.69,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

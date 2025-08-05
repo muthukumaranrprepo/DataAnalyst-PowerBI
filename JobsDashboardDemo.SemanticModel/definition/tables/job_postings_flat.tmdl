@@ -1,0 +1,162 @@
+table job_postings_flat
+	lineageTag: 0f09d333-2224-4b55-9806-813a6c4ad7dd
+
+	column job_title_short
+		dataType: string
+		lineageTag: fcda7f2f-81c0-4d75-aeac-6baf3c5f9440
+		summarizeBy: none
+		sourceColumn: job_title_short
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_title
+		dataType: string
+		lineageTag: c93be5b9-0e3c-4265-ba84-a951ac3de11b
+		summarizeBy: none
+		sourceColumn: job_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_location
+		dataType: string
+		lineageTag: be4dae0b-b571-449c-864c-89de9402ade5
+		summarizeBy: none
+		sourceColumn: job_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_via
+		dataType: string
+		lineageTag: a8f97f01-3378-469a-8c52-841541b94afc
+		summarizeBy: none
+		sourceColumn: job_via
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_schedule_type
+		dataType: string
+		lineageTag: 0146aa84-39ad-4b96-9ddd-3c4ad7ae1bb0
+		summarizeBy: none
+		sourceColumn: job_schedule_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_work_from_home
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 56be1f4c-450b-4b09-99fc-e3084d07aeec
+		summarizeBy: none
+		sourceColumn: job_work_from_home
+
+		annotation SummarizationSetBy = Automatic
+
+	column search_location
+		dataType: string
+		lineageTag: 7c678643-152d-4268-989e-1985651026aa
+		summarizeBy: none
+		sourceColumn: search_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_posted_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 06a38187-9192-4ea9-a515-8ef280b1a1f1
+		summarizeBy: none
+		sourceColumn: job_posted_date
+
+		variation Variation
+			isDefault
+			relationship: 561dd2e0-0c4f-43df-b47e-9575a470f9e1
+			defaultHierarchy: LocalDateTable_e729e682-69e0-4dd7-8a2c-cec3362ce5a9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_no_degree_mention
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8d3648d4-cbce-4a7d-8546-b67aec48c8d2
+		summarizeBy: none
+		sourceColumn: job_no_degree_mention
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_health_insurance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5f426843-320c-4c74-9411-58b54466a21c
+		summarizeBy: none
+		sourceColumn: job_health_insurance
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_country
+		dataType: string
+		lineageTag: a004685c-50a3-46d0-8f2e-4772aa171b9d
+		summarizeBy: none
+		sourceColumn: job_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary_rate
+		dataType: string
+		lineageTag: 4de90fe3-e9b3-4302-9c3b-6b3eeaee1d61
+		summarizeBy: none
+		sourceColumn: salary_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary_year_avg
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 754586b5-7e15-4ba1-bdee-030abc9fef28
+		summarizeBy: average
+		sourceColumn: salary_year_avg
+
+		annotation SummarizationSetBy = User
+
+	column salary_hour_avg
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 620171a8-4546-49f0-bbe2-ad15796ae5fc
+		summarizeBy: average
+		sourceColumn: salary_hour_avg
+
+		annotation SummarizationSetBy = User
+
+	column company_name
+		dataType: string
+		lineageTag: 1aef9ea4-29be-4af1-b933-84a720da49f2
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_skills
+		dataType: string
+		lineageTag: 415d3e3c-4e9a-41ad-b96a-f7574defc650
+		summarizeBy: none
+		sourceColumn: job_skills
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_type_skills
+		dataType: string
+		lineageTag: ef22d29e-9e9c-4b39-9672-47ff006bca9b
+		summarizeBy: none
+		sourceColumn: job_type_skills
+
+		annotation SummarizationSetBy = Automatic
+
+	partition job_postings_flat = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\hp\Documents\GitHub\DataAnalyst-PowerBI\DataFiles\job_postings_flat.csv"),[Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"job_title_short", type text}, {"job_title", type text}, {"job_location", type text}, {"job_via", type text}, {"job_schedule_type", type text}, {"job_work_from_home", type logical}, {"search_location", type text}, {"job_posted_date", type datetime}, {"job_no_degree_mention", type logical}, {"job_health_insurance", type logical}, {"job_country", type text}, {"salary_rate", type text}, {"salary_year_avg", Int64.Type}, {"salary_hour_avg", type number}, {"company_name", type text}, {"job_skills", type text}, {"job_type_skills", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

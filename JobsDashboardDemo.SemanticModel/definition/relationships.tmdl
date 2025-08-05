@@ -1,0 +1,5 @@
+relationship 561dd2e0-0c4f-43df-b47e-9575a470f9e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: job_postings_flat.job_posted_date
+	toColumn: LocalDateTable_e729e682-69e0-4dd7-8a2c-cec3362ce5a9.Date
+
