@@ -1,6 +1,6 @@
 # Jobs Dashboard
 
-![Dashboard Overview]()
+![Dashboard Overview](/DataAnalyst-PowerBI/Project1_Job%20Title%20Dahsboard/Image/Job%20Title%20Dashboard.PNG)
 
 ## Overview
 
